@@ -8,14 +8,11 @@ import java.lang.invoke.MethodHandles;
 
 public final class VehicleClient {
 
-
-    private static final Logger LOG = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass().getSimpleName());
-
     private static void connect(ManagedChannel channel) {
         System.out.println("Enter connection...");
         VehicleServiceGrpc.VehicleServiceBlockingStub stub = VehicleServiceGrpc.newBlockingStub(channel);
         VehicleResponse response = stub.connect(VehicleRequest.newBuilder().setPayload("Test Payload").build());
-         System.out.println("VehicleResponse: " + response.getResponseString());
+        System.out.println("VehicleResponse: " + response.getResponseString());
     }
 
     public static void main(String[] args) {
