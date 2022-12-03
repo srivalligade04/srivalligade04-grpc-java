@@ -7,7 +7,7 @@ import java.lang.invoke.MethodHandles;
 import static io.grpc.ServerBuilder.*;
 
 public final class VehicleServer {
-    private static final Logger LOG = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass().getSimpleName());
+    
     public static void main(String[] args) throws IOException, InterruptedException {
         int port = 50052;
 
