@@ -1,9 +1,6 @@
 package vehicle.server;
 
 import io.grpc.Server;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.IOException;
 import java.lang.invoke.MethodHandles;
 
@@ -20,13 +17,13 @@ public final class VehicleServer {
                 .build();
 
         server.start();
-        LOG.info("Server Started");
-        LOG.info("Listening on port: " + port);
+        System.out.println("Server Started");
+         System.out.println("Listening on port: " + port);
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            LOG.info("Received Shutdown Request");
+            System.out.println("Received Shutdown Request");
             server.shutdown();
-           LOG.info("Server Stopped");
+            System.out.println("Server Stopped");
         }));
 
         server.awaitTermination();
